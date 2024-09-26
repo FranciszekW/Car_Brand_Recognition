@@ -20,7 +20,7 @@ car_brands = [
 script_directory = os.path.dirname(os.path.abspath(__file__))
 
 # Set the base directory to the 'src' directory, which is next to the 'scripts' directory
-base_directory = os.path.join(script_directory, '..', 'Car_Brands')
+base_directory = os.path.join(script_directory, '..', 'data')
 
 # Create base directory if it doesn't exist
 if not os.path.exists(base_directory):
