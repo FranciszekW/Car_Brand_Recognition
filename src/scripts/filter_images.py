@@ -41,7 +41,9 @@ def process_brand_folders(raw_images_folder):
             print(f"Processing brand: {brand_folder}")
             view_and_delete_images_in_folder(brand_folder_path)
 
-# Example usage:
-if __name__ == "__main__":
+def main():
     image_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../raw_images')
     process_brand_folders(image_folder)
+
+if __name__ == "__main__":
+    main()

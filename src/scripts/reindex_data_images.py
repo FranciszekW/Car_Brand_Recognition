@@ -50,10 +50,12 @@ def process_all_brands(dir):
             print(f"Processing brand folder: {brand_folder}")
             rename_images_sequentially(brand_folder_path)
 
-
-if __name__ == "__main__":
+def main():
     # Path to the data directory (contains brand folders)
     data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data')
 
     # Call the function to process all brand folders
     process_all_brands(data_dir)
+
+if __name__ == "__main__":
+    main()
