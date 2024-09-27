@@ -15,7 +15,7 @@ def calculate_hash(image_path):
 
 
 # Function to remove duplicates in a brand folder
-def remove_duplicates(brand_folder, threshold=5):
+def remove_duplicates(brand_folder, threshold=3):
     image_hashes = {}
     removed_images = 0
 
@@ -27,7 +27,8 @@ def remove_duplicates(brand_folder, threshold=5):
             if image_hash:
                 for existing_hash, existing_file in image_hashes.items():
                     hash_diff = image_hash - existing_hash
-                    print(f"Hash difference between {image_file} and {existing_file}: {hash_diff}")
+                    if hash_diff < threshold:
+                        print(f"Hash difference between {image_file} and {existing_file}: {hash_diff}")
 
                     # if hash_diff < threshold:
                     #     print(f"Removing duplicate: {image_file} (similar to {existing_file})")
