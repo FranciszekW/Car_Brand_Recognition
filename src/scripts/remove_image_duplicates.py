@@ -50,13 +50,12 @@ def remove_duplicates(brand_folder, threshold=3):
 # Main function to iterate through brand folders in data directory
 def main():
     data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data')
-    remove_duplicates(os.path.join(data_dir, 'aatest'))
     # Iterate through each brand folder
-    # for brand in os.listdir(data_dir):
-    #     brand_folder = os.path.join(data_dir, brand)
-    #     if os.path.isdir(brand_folder):
-    #         print(f"Processing {brand} folder...")
-    #         remove_duplicates(brand_folder)
+    for brand in os.listdir(data_dir):
+        brand_folder = os.path.join(data_dir, brand)
+        if os.path.isdir(brand_folder):
+            print(f"Processing {brand} folder...")
+            remove_duplicates(brand_folder)
 
 if __name__ == "__main__":
     main()
