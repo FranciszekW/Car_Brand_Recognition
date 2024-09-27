@@ -75,7 +75,7 @@ def download_images(image_urls, folder_name, start_index):
                 print(f"Error downloading image {index + 1} from {url}: {e}")
                 break  # Break on other request exceptions
 
-        time.sleep(0.3)  # Slight delay to avoid overwhelming the server
+        time.sleep(0.5)  # Slight delay to avoid overwhelming the server
 #%%
 def get_last_index(folder_name):
     max_index = -1  # Start with -1 to handle empty folders
