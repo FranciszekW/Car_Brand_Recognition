@@ -7,6 +7,8 @@ from requests.exceptions import Timeout, RequestException
 from PIL import Image
 from io import BytesIO
 
+# Desired number of images in every brand folder
+IMAGE_CAP = 200
 
 # %%
 # Function to perform Google Custom Search for images
@@ -99,6 +101,7 @@ def get_image_count(brand_folder):
 #%%
 # Main process to iterate through the Car_brands directory
 def main():
+    global IMAGE_CAP
     api_key = "AIzaSyDvIRsZu12SY7i8unJcT0jzqx39QrbeH_o"
     search_engine_id = "8739bdf9e17c54c1b"
 
@@ -124,7 +127,7 @@ def main():
             print(f"Existing images for {brand}: {existing_image_count}")
 
             # Calculate how many images are still needed
-            images_needed = 200 - existing_image_count
+            images_needed = IMAGE_CAP - existing_image_count
 
             # If there are already 200 images or more, skip downloading
             if images_needed <= 0:
