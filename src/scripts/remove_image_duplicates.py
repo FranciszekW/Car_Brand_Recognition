@@ -36,12 +36,12 @@ def remove_duplicates(brand_folder, threshold=3):
             if image_hash:
                 for existing_hash, existing_file in image_hashes.items():
                     hash_diff = image_hash - existing_hash
-                    print(f"Hash difference between {image_file} and {existing_file}: {hash_diff}")
-                    # if hash_diff < threshold:
-                    #     print(f"Removing duplicate: {image_file} (similar to {existing_file})")
-                    #     os.remove(image_path)
-                    #     removed_images += 1
-                    #     break
+                    # print(f"Hash difference between {image_file} and {existing_file}: {hash_diff}")
+                    if hash_diff < threshold:
+                        print(f"Removing duplicate: {image_file} (similar to {existing_file})")
+                        os.remove(image_path)
+                        removed_images += 1
+                        break
                 else:
                     image_hashes[image_hash] = image_file
 
