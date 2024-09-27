@@ -44,7 +44,7 @@ def google_image_search(api_key, search_engine_id, query, start_index, num_image
 
 # %%
 # Function to download images without conversion
-def download_images(image_urls, folder_name):
+def download_images(image_urls, folder_name, start_index):
     if not os.path.exists(folder_name):
         os.makedirs(folder_name)
 
@@ -54,11 +54,12 @@ def download_images(image_urls, folder_name):
 
         while attempts < 3 and not success:  # Retry up to 3 times
             try:
-                print(f"Downloading image {index + 1} from {url}")
+                current_index = index + start_index + 1
+                print(f"Downloading image {index + 1} (index {current_index}) from {url}")
                 response = requests.get(url, timeout=5)  # Increased timeout
                 response.raise_for_status()  # Raise an error for bad responses
                 # Save the image as is
-                image_path = os.path.join(folder_name, f"image_{index + 1}.jpg")
+                image_path = os.path.join(folder_name, f"image_{current_index}.jpg")
                 with open(image_path, 'wb') as file:
                     file.write(response.content)
                 print(f"Downloaded {image_path}")
@@ -110,6 +111,7 @@ def main():
     # Iterate through the folders (brand names) in the data directory
     for brand in os.listdir(car_brands_dir):
         brand_path = os.path.join(car_brands_dir, brand)
+        save_to_path = os.path.join(images_dir, brand)
 
         # Check if the item is a directory (brand folder)
         if os.path.isdir(brand_path):
@@ -133,7 +135,6 @@ def main():
             images_to_download = max(10 * round(images_needed / 10), 10)
             print(f"Downloading {images_to_download} more images for {brand}...")
 
-            save_to_path = os.path.join(images_dir, brand)
 
             last_index = get_last_index(brand_image_path)  # Get the last index from existing images
             print(f"Last downloaded index for {brand}: {last_index}")
@@ -143,7 +144,7 @@ def main():
                                                  start_index=last_index + 1, num_images=images_to_download)
 
                 # Download images directly into the corresponding brand's folder in the raw_images directory
-                download_images(image_urls, folder_name=save_to_path)
+                download_images(image_urls, folder_name=save_to_path, start_index=last_index)
             except Exception as e:
                 print(f"Error processing brand {brand}: {e}")
 
