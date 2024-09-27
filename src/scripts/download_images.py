@@ -55,7 +55,7 @@ def download_images(image_urls, folder_name):
         while attempts < 3 and not success:  # Retry up to 3 times
             try:
                 print(f"Downloading image {index + 1} from {url}")
-                response = requests.get(url, timeout=10)  # Increased timeout
+                response = requests.get(url, timeout=5)  # Increased timeout
                 response.raise_for_status()  # Raise an error for bad responses
                 # Save the image as is
                 image_path = os.path.join(folder_name, f"image_{index + 1}.jpg")
@@ -88,6 +88,14 @@ def get_last_index(folder_name):
 
     return max_index
 # %%
+def get_image_count(brand_folder):
+    """Count the number of valid images in the brand folder."""
+    image_count = 0
+    for filename in os.listdir(brand_folder):
+        if filename.endswith((".jpg", ".jpeg", ".png", ".gif")):
+            image_count += 1
+    return image_count
+#%%
 # Main process to iterate through the Car_brands directory
 def main():
     api_key = "AIzaSyDvIRsZu12SY7i8unJcT0jzqx39QrbeH_o"
@@ -105,20 +113,36 @@ def main():
 
         # Check if the item is a directory (brand folder)
         if os.path.isdir(brand_path):
-            query = f"{brand} car"  # Construct the search query
+            query = f"{brand} car photo"  # Construct the search query
             print(f"Searching for images of {query}...")
 
             # Determine the last index of downloaded images
             brand_image_path = os.path.join(car_brands_dir, brand)
+            existing_image_count = get_image_count(brand_image_path)
+            print(f"Existing images for {brand}: {existing_image_count}")
+
+            # Calculate how many images are still needed
+            images_needed = 200 - existing_image_count
+
+            # If there are already 200 images or more, skip downloading
+            if images_needed <= 0:
+                print(f"{brand} already has {existing_image_count} images. Skipping download.")
+                continue
+
+            # Round the number of images to download to the nearest multiple of 10
+            images_to_download = max(10 * round(images_needed / 10), 10)
+            print(f"Downloading {images_to_download} more images for {brand}...")
+
             save_to_path = os.path.join(images_dir, brand)
+
             last_index = get_last_index(brand_image_path)  # Get the last index from existing images
             print(f"Last downloaded index for {brand}: {last_index}")
             # Search for images starting from the last index
             try:
                 image_urls = google_image_search(api_key, search_engine_id, query,
-                                                 start_index=last_index + 1, num_images=200)
+                                                 start_index=last_index + 1, num_images=images_to_download)
 
-                # Download images directly into the corresponding brand's folder
+                # Download images directly into the corresponding brand's folder in the raw_images directory
                 download_images(image_urls, folder_name=save_to_path)
             except Exception as e:
                 print(f"Error processing brand {brand}: {e}")
