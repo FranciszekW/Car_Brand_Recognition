@@ -48,7 +48,7 @@ def remove_duplicates(brand_folder, threshold=3):
     print(f"Removed {removed_images} duplicate images from {brand_folder}")
 
 # Main function to iterate through brand folders in data directory
-def main():
+def remove_from_data():
     data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data')
     # Iterate through each brand folder
     for brand in os.listdir(data_dir):
@@ -57,5 +57,14 @@ def main():
             print(f"Processing {brand} folder...")
             remove_duplicates(brand_folder)
 
+def remove_from_raw():
+    raw = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../raw_images')
+    # Iterate through each brand folder
+    for brand in os.listdir(raw):
+        brand_folder = os.path.join(raw, brand)
+        if os.path.isdir(brand_folder):
+            print(f"Processing {brand} folder...")
+            remove_duplicates(brand_folder)
+
 if __name__ == "__main__":
-    main()
+    remove_from_data()
