@@ -8,7 +8,7 @@ from PIL import Image
 from io import BytesIO
 
 # Desired number of images in every brand folder
-IMAGE_CAP = 200
+IMAGE_CAP = 100
 
 # %%
 # Function to perform Google Custom Search for images
@@ -99,11 +99,24 @@ def get_image_count(brand_folder):
             image_count += 1
     return image_count
 #%%
+def read_first_line(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            first_line = file.readline().strip()  # Read the first line and remove any surrounding whitespace
+        return first_line
+    except FileNotFoundError:
+        print(f"File not found: {file_path}")
+        return None
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None
+#%%
 # Main process to iterate through the Car_brands directory
 def main():
     global IMAGE_CAP
-    api_key = "AIzaSyDvIRsZu12SY7i8unJcT0jzqx39QrbeH_o"
-    search_engine_id = "8739bdf9e17c54c1b"
+    private_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../private')
+    api_key = read_first_line(os.path.join(private_dir, 'api_key.txt'))
+    search_engine_id = read_first_line(os.path.join(private_dir, 'search_engine_id.txt'))
 
     # Path to the Car_brands directory (relative to the current script directory)
     car_brands_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data')
