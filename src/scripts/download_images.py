@@ -131,7 +131,7 @@ def main():
 
         # Check if the item is a directory (brand folder)
         if os.path.isdir(brand_path):
-            query = f"{brand} car photo -site:images.dealer.com -site:pictures.dealer.com -site:upload.wikimedia.org -site:cars.usnews.com"
+            query = f"{brand} car photo all models -site:images.dealer.com -site:pictures.dealer.com -site:upload.wikimedia.org -site:cars.usnews.com"
             print(f"Searching for images of {query}...")
 
             # Determine the last index of downloaded images
