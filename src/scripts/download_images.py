@@ -8,7 +8,7 @@ from PIL import Image
 from io import BytesIO
 
 # Desired number of images in every brand folder
-IMAGE_CAP = 100
+IMAGE_CAP = 50
 
 # %%
 # Function to perform Google Custom Search for images
@@ -131,7 +131,7 @@ def main():
 
         # Check if the item is a directory (brand folder)
         if os.path.isdir(brand_path):
-            query = f"{brand} car for sale photo -site:images.dealer.com -site:pictures.dealer.com"
+            query = f"{brand} car photo -site:images.dealer.com -site:pictures.dealer.com -site:upload.wikimedia.org -site:cars.usnews.com"
             print(f"Searching for images of {query}...")
 
             # Determine the last index of downloaded images
