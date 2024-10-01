@@ -8,7 +8,7 @@ from PIL import Image
 from io import BytesIO
 
 # Desired number of images in every brand folder
-IMAGE_CAP = 70
+IMAGE_CAP = 100
 
 # %%
 # Function to perform Google Custom Search for images
@@ -119,7 +119,7 @@ def main():
     search_engine_id = read_first_line(os.path.join(private_dir, 'search_engine_id.txt'))
 
     # Path to the Car_brands directory (relative to the current script directory)
-    car_brands_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data')
+    car_brands_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data/train')
 
     # Define the images directory path
     images_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)),'../raw_images')

@@ -49,7 +49,7 @@ def remove_duplicates(brand_folder, threshold=3):
 
 # Main function to iterate through brand folders in data directory
 def remove_from_data():
-    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data')
+    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data/train')
     # Iterate through each brand folder
     for brand in os.listdir(data_dir):
         brand_folder = os.path.join(data_dir, brand)

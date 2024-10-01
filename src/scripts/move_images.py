@@ -35,7 +35,7 @@ def move_images_with_collision_check(raw_images_dir, data_dir):
 def main():
     # Define the path to the data and raw_images directories
     raw_images_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../raw_images')
-    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data')
+    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data/train')
 
     # Move images and check for collisions
     move_images_with_collision_check(raw_images_dir, data_dir)

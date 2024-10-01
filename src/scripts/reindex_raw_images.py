@@ -35,7 +35,7 @@ def rename_files_in_raw_images(data_brand_folder, raw_brand_folder):
 # Main function to iterate through brand folders and rename files in raw_images
 def main():
     # Define the path to the data and raw_images directories
-    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data')
+    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data/train')
     raw_images_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../raw_images')
 
     # Iterate through each brand folder in the data directory
