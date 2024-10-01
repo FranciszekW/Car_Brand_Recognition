@@ -47,7 +47,7 @@ def process_all_brands(dir):
 
         # Check if the item is a directory (brand folder)
         if os.path.isdir(brand_folder_path):
-            print(f"Processing brand folder: {brand_folder}")
+            print(f"Reindexing images from: {brand_folder}")
             rename_images_sequentially(brand_folder_path)
 
 def main():

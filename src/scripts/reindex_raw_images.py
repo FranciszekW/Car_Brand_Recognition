@@ -45,7 +45,7 @@ def main():
 
         # Check if the brand folder exists in both data and raw_images
         if os.path.isdir(data_brand_folder) and os.path.isdir(raw_brand_folder):
-            print(f"Processing brand: {brand}")
+            print(f"Reindexing raw images from: {brand}")
             # Rename the files in the raw_images/brand folder
             rename_files_in_raw_images(data_brand_folder, raw_brand_folder)
         else:

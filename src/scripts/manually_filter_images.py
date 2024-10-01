@@ -38,7 +38,7 @@ def process_brand_folders(raw_images_folder):
     for brand_folder in sorted(os.listdir(raw_images_folder)):
         brand_folder_path = os.path.join(raw_images_folder, brand_folder)
         if os.path.isdir(brand_folder_path):  # Ensure it's a directory
-            print(f"Processing brand: {brand_folder}")
+            print(f"Filtering images from brand: {brand_folder}")
             view_and_delete_images_in_folder(brand_folder_path)
 
 def main():

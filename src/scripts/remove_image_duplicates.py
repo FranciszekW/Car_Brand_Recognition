@@ -54,7 +54,7 @@ def remove_from_data():
     for brand in os.listdir(data_dir):
         brand_folder = os.path.join(data_dir, brand)
         if os.path.isdir(brand_folder):
-            print(f"Processing {brand} folder...")
+            print(f"Removing duplicates from {brand} folder...")
             remove_duplicates(brand_folder)
 
 def remove_from_raw():
@@ -63,7 +63,7 @@ def remove_from_raw():
     for brand in os.listdir(raw):
         brand_folder = os.path.join(raw, brand)
         if os.path.isdir(brand_folder):
-            print(f"Processing {brand} folder...")
+            print(f"Removing duplicates from {brand} folder...")
             remove_duplicates(brand_folder)
 
 if __name__ == "__main__":
