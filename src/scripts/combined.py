@@ -10,7 +10,7 @@ def main():
     filter_images_main()
     move_images_main()
     reindex_main()
-    remove_corrupted_data()
+    # remove_corrupted_data()
     remove_data_duplicates()
 
 if __name__ == "__main__":
