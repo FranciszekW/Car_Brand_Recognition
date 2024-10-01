@@ -2,6 +2,7 @@ import os
 
 # List of 100 car brands recognized in Europe
 car_brands = [
+    # TODO sort these
     "Acura", "Alfa Romeo", "Aston Martin", "Audi", "BMW",
     "Bentley", "Bugatti", "Buick", "Caterham",
     "Chevrolet", "Chrysler", "Citroen", "Dacia", "Dodge",
@@ -12,7 +13,7 @@ car_brands = [
     "Mini", "Mitsubishi", "Morgan", "Nissan",
     "Opel", "Pagani", "Peugeot", "Porsche", "Renault",
     "Rolls Royce", "Saab", "Seat", "Skoda", "Smart",
-    "Subaru", "Suzu", "Suzuki", "Tata",
+    "Subaru", "Suzuki", "Tata",
     "Tesla", "Toyota", "Volkswagen", "Volvo",
 ]
 
