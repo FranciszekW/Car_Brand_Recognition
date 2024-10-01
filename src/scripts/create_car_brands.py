@@ -3,7 +3,7 @@ import os
 # List of 100 car brands recognized in Europe
 car_brands = [
     "Acura", "Alfa Romeo", "Aston Martin", "Audi", "BMW",
-    "Bentley", "Bristol", "Bugatti", "Buick", "Caterham",
+    "Bentley", "Bugatti", "Buick", "Caterham",
     "Chevrolet", "Chrysler", "Citroen", "Dacia", "Dodge",
     "Ferrari", "Fiat", "Ford", "GMC", "Honda",
     "Hyundai", "Infiniti", "Isuzu", "Jaguar", "Kia",
