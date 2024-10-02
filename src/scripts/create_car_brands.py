@@ -2,19 +2,18 @@ import os
 
 # List of 100 car brands recognized in Europe
 car_brands = [
-    # TODO sort these
-    "Acura", "Alfa Romeo", "Aston Martin", "Audi", "BMW",
-    "Bentley", "Bugatti", "Buick", "Caterham",
-    "Chevrolet", "Chrysler", "Citroen", "Dacia", "Dodge",
-    "Ferrari", "Fiat", "Ford", "GMC", "Honda",
-    "Hyundai", "Infiniti", "Isuzu", "Jaguar", "Kia",
-    "Koenigsegg", "Lamborghini", "Land Rover", "Lexus",
-    "Lotus", "Maserati", "Mazda", "McLaren", "Mercedes-Benz",
-    "Mini", "Mitsubishi", "Morgan", "Nissan",
-    "Opel", "Pagani", "Peugeot", "Porsche", "Renault",
-    "Rolls Royce", "Saab", "Seat", "Skoda", "Smart",
-    "Subaru", "Suzuki", "Tata",
-    "Tesla", "Toyota", "Volkswagen", "Volvo",
+    "Acura", "Alfa Romeo", "Aston Martin", "Audi", "Bentley",
+    "BMW", "Bugatti", "Buick", "Caterham", "Chevrolet",
+    "Chrysler", "Citroen", "Dacia", "Dodge", "Ferrari",
+    "Fiat", "Ford", "GMC", "Honda", "Hyundai",
+    "Infiniti", "Isuzu", "Jaguar", "Kia", "Koenigsegg",
+    "Lamborghini", "Land Rover", "Lexus", "Lotus", "Maserati",
+    "Mazda", "McLaren", "Mercedes-Benz", "Mini", "Mitsubishi",
+    "Morgan", "Nissan", "Opel", "Pagani", "Peugeot",
+    "Porsche", "Renault", "Rolls Royce", "Saab", "Seat",
+    "Skoda", "Smart", "Subaru", "Suzuki", "Tata",
+    "Tesla", "Toyota", "Volkswagen", "Volvo"
+
 ]
 
 # Get the directory of the current script
