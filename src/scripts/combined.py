@@ -7,7 +7,7 @@ from remove_corrupted_images import main as remove_corrupted_data
 
 def main():
     remove_raw_duplicates()
-    filter_images_main()
+    # filter_images_main()
     move_images_main()
     reindex_main()
     remove_corrupted_data()
