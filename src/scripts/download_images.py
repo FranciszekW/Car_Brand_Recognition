@@ -131,8 +131,7 @@ def main():
 
         # Check if the item is a directory (brand folder)
         if os.path.isdir(brand_path):
-            #TODO change brand to uppercase
-            query = f"{brand} car brand photo -site:images.dealer.com -site:pictures.dealer.com -site:upload.wikimedia.org -site:cars.usnews.com"
+            query = f"{brand.upper()} brand car photo -site:images.dealer.com -site:pictures.dealer.com -site:upload.wikimedia.org -site:cars.usnews.com"
             print(f"Searching for images of {query}...")
 
             # Determine the last index of downloaded images
