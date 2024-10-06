@@ -2,15 +2,15 @@ import os
 
 # List of 100 car brands recognized in Europe
 car_brands = [
-    "Acura", "Alfa Romeo", "Aston Martin", "Audi", "Bentley",
+    "Acura", "Alfa_Romeo", "Aston_Martin", "Audi", "Bentley",
     "BMW", "Bugatti", "Buick", "Caterham", "Chevrolet",
     "Chrysler", "Citroen", "Dacia", "Dodge", "Ferrari",
     "Fiat", "Ford", "GMC", "Honda", "Hyundai",
     "Infiniti", "Isuzu", "Jaguar", "Kia", "Koenigsegg",
-    "Lamborghini", "Land Rover", "Lexus", "Lotus", "Maserati",
+    "Lamborghini", "Land_Rover", "Lexus", "Lotus", "Maserati",
     "Mazda", "McLaren", "Mercedes-Benz", "Mini", "Mitsubishi",
     "Morgan", "Nissan", "Opel", "Pagani", "Peugeot",
-    "Porsche", "Renault", "Rolls Royce", "Saab", "Seat",
+    "Porsche", "Renault", "Rolls_Royce", "Saab", "Seat",
     "Skoda", "Smart", "Subaru", "Suzuki", "Tata",
     "Tesla", "Toyota", "Volkswagen", "Volvo"
 
