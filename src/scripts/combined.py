@@ -5,6 +5,7 @@ from reindex_raw_images import  main as reindex_raw
 from remove_image_duplicates import remove_from_images as remove_images_duplicates
 from remove_image_duplicates import remove_from_raw as remove_raw_duplicates
 from remove_corrupted_images import main as remove_corrupted_images
+from convert_to_jpg import main as convert_to_jpg
 
 def main():
     remove_raw_duplicates()
@@ -14,6 +15,7 @@ def main():
     reindex_main()
     remove_corrupted_images()
     remove_images_duplicates()
+    convert_to_jpg()
 
 if __name__ == "__main__":
     main()
