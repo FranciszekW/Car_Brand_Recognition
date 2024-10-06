@@ -2,13 +2,17 @@ import os
 import random
 import shutil
 
-def select_and_move_images(data_folder, validate_folder, num_images=10):
+def select_and_move_images(data_folder, validate_folder, brands, num_images=10):
     # Ensure the validate folder exists
     if not os.path.exists(validate_folder):
         os.makedirs(validate_folder)
 
     # Loop through each brand folder in the data directory
     for brand in os.listdir(data_folder):
+        # Create data only for specified brands.
+        if brand not in brands:
+            continue
+
         brand_folder = os.path.join(data_folder, brand)
 
         # Check if the path is a directory (brand folder)
@@ -36,7 +40,7 @@ def main():
     data_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data')
     train_folder = os.path.join(data_folder, 'train')
     validate_folder = os.path.join(data_folder, 'valid')
-    select_and_move_images(train_folder, validate_folder, num_images=10)
+    select_and_move_images(train_folder, validate_folder, os.listdir(data_folder), num_images=10)
 
 if __name__ == '__main__':
     main()

@@ -18,12 +18,19 @@ def delete_all_images_from_folder(train_dir):
 
             print(f"Deleted all images in: {brand_train_dir}")
 
-def copy_images_to_train(images_dir, train_dir, num_ims):
+def delete_whole_folder(dir):
+    for brand_dir in os.listdir(dir):
+        shutil.rmtree(os.path.join(dir, brand_dir))
+
+def copy_images_to_train(images_dir, train_dir, brands, num_ims):
     # Ensure the target train directory exists
     os.makedirs(train_dir, exist_ok=True)
 
     # Iterate over each brand directory in the images folder
     for brand_dir in os.listdir(images_dir):
+        if brand_dir not in brands:
+            continue
+
         brand_images_dir = os.path.join(images_dir, brand_dir)
         train_brand_dir = os.path.join(train_dir, brand_dir)
 
