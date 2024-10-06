@@ -2,4 +2,5 @@ src/data
 src/raw_images
 src/scripts/__pycache__
 src/private
+src/images
 .idea
