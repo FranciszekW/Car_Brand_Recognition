@@ -3,7 +3,7 @@ import shutil
 import random
 from glob import glob
 
-def delete_all_images_from_train(train_dir):
+def delete_all_images_from_folder(train_dir):
     # Iterate over each brand directory in the train folder
     for brand_dir in os.listdir(train_dir):
         brand_train_dir = os.path.join(train_dir, brand_dir)
@@ -49,10 +49,10 @@ def main():
     train_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data/train')
 
     # Set the number of images to copy for each brand
-    num_ims = 30  # adjust the number as needed
+    num_ims = 20  # adjust the number as needed
 
     # Delete all images before copying
-    delete_all_images_from_train(train_dir)
+    delete_all_images_from_folder(train_dir)
 
     # Call the function to copy images
     copy_images_to_train(images_dir, train_dir, num_ims)
