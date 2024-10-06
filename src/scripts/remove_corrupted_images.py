@@ -28,7 +28,7 @@ def remove_corrupted_images(folder_path):
 
 # Main function to iterate through brand folders in data directory
 def main():
-    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data/train')
+    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../images')
 
     # Iterate through each brand folder
     for brand in os.listdir(data_dir):

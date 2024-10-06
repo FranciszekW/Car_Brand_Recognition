@@ -2,11 +2,11 @@ import os
 import shutil
 
 # Function to move images from raw_images to data and raise error on collisions
-def move_images_with_collision_check(raw_images_dir, data_dir):
+def move_images_with_collision_check(raw_images_dir, images_dir):
     # Iterate through each brand folder in the raw_images directory
     for brand in os.listdir(raw_images_dir):
         raw_brand_folder = os.path.join(raw_images_dir, brand)
-        data_brand_folder = os.path.join(data_dir, brand)
+        data_brand_folder = os.path.join(images_dir, brand)
 
         # Ensure we are dealing with directories
         if os.path.isdir(raw_brand_folder):
@@ -35,10 +35,10 @@ def move_images_with_collision_check(raw_images_dir, data_dir):
 def main():
     # Define the path to the data and raw_images directories
     raw_images_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../raw_images')
-    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data/train')
+    images_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../images')
 
     # Move images and check for collisions
-    move_images_with_collision_check(raw_images_dir, data_dir)
+    move_images_with_collision_check(raw_images_dir, images_dir)
 
 if __name__ == "__main__":
     main()

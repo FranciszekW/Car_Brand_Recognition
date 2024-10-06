@@ -52,7 +52,7 @@ def process_all_brands(dir):
 
 def main():
     # Path to the data directory (contains brand folders)
-    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data/train')
+    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../images')
 
     # Call the function to process all brand folders
     process_all_brands(data_dir)

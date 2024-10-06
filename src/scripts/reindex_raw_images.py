@@ -3,10 +3,10 @@ import re
 from download_images import get_last_index
 
 # Function to rename files in raw_images based on the last index from data folder
-def rename_files_in_raw_images(data_brand_folder, raw_brand_folder):
+def rename_files_in_raw_images(images_brand_folder, raw_brand_folder):
     # Get the last index from the data folder
-    last_index = get_last_index(data_brand_folder)
-    print(f"Last index in {data_brand_folder}: {last_index}")
+    last_index = get_last_index(images_brand_folder)
+    print(f"Last index in {images_brand_folder}: {last_index}")
 
     # First, rename files to a temporary name to avoid collisions
     temp_rename_map = []  # Track temp filenames for later renaming
@@ -35,7 +35,7 @@ def rename_files_in_raw_images(data_brand_folder, raw_brand_folder):
 # Main function to iterate through brand folders and rename files in raw_images
 def main():
     # Define the path to the data and raw_images directories
-    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data/train')
+    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../images')
     raw_images_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../raw_images')
 
     # Iterate through each brand folder in the data directory
@@ -49,7 +49,7 @@ def main():
             # Rename the files in the raw_images/brand folder
             rename_files_in_raw_images(data_brand_folder, raw_brand_folder)
         else:
-            print(f"Brand folder not found in either data or raw_images for {brand}")
+            print(f"Brand folder not found in either images or raw_images for {brand}")
 
 if __name__ == "__main__":
     main()

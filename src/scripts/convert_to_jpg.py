@@ -29,7 +29,7 @@ def convert_folder_to_jpg(folder_path):
 
 
 def main():
-    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data/train')
+    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../images')
 
     # Convert all images in the folder and subfolders
     for brand in os.listdir(data_dir):
