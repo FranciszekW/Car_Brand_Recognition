@@ -4,4 +4,6 @@ src/scripts/__pycache__
 src/private
 src/images
 .idea
-src/test.JPG
+src/test/
+src/stanford
+src/network
