@@ -14,7 +14,7 @@ def main():
     # Number of train and valid images for each brand.
     num_train_ims = 130
     num_valid_ims = 6
-    brands = ["Alfa_Romeo", "Audi", "BMW", "Citroen", "Fiat", "Honda", "Mazda", "Mercedes-Benz", "Peugeot", "Skoda"]
+    brands = ["Acura", "Audi", "BMW", "Chevrolet", "Fiat", "Honda", "Mazda", "Mercedes-Benz", "Toyota", "Volvo"]
 
     images_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../images')
     train_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data/train')
