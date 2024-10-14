@@ -11,7 +11,7 @@ def convert_to_jpg(image_path):
             # Overwrite the image with the same name but saved as a proper JPG
             img_rgb.save(image_path, "JPEG")
 
-            print(f"Converted {image_path} to JPG")
+            # print(f"Converted {image_path} to JPG")
             return True
     except Exception as e:
         print(f"Error converting {image_path}: {e}")

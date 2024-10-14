@@ -24,7 +24,7 @@ def resize_image(image_path, target_size):
         return None
 
 # Function to remove duplicates in a brand folder
-def remove_duplicates(brand_folder, threshold=3):
+def remove_duplicates(brand_folder, threshold=6):
     image_hashes = {}
     removed_images = 0
 

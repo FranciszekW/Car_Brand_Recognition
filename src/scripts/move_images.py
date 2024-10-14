@@ -6,6 +6,7 @@ def move_images_with_collision_check(raw_images_dir, images_dir):
     # Iterate through each brand folder in the raw_images directory
     for brand in os.listdir(raw_images_dir):
         raw_brand_folder = os.path.join(raw_images_dir, brand)
+        print(f"Moving images from: {raw_brand_folder}")
         data_brand_folder = os.path.join(images_dir, brand)
 
         # Ensure we are dealing with directories
@@ -25,8 +26,10 @@ def move_images_with_collision_check(raw_images_dir, images_dir):
                     raise FileExistsError(f"File collision detected: {data_image_path} already exists!")
 
                 # Move the file to the corresponding brand folder in the data directory
-                print(f"Moving {raw_image_path} to {data_image_path}")
+                # print(f"Moving {raw_image_path} to {data_image_path}")
                 shutil.move(raw_image_path, data_image_path)
+
+            print(f"Moved all images to: {data_brand_folder}")
 
         else:
             print(f"Skipping non-directory item in raw_images: {brand}")

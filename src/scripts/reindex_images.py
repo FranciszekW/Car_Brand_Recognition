@@ -32,7 +32,7 @@ def rename_images_sequentially(folder_path):
 
         # Rename the file
         os.rename(old_file_path, new_file_path)
-        print(f"Renamed {old_filename} to {new_filename}")
+        # print(f"Renamed {old_filename} to {new_filename}")
 
     print(f"Renamed all images in folder: {folder_path}")
 
