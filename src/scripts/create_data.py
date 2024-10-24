@@ -12,9 +12,9 @@ from src.scripts.create_valid_from_data import select_and_move_images
 def main():
 
     # Number of train and valid images for each brand.
-    num_train_ims = 130
-    num_valid_ims = 6
-    brands = ["Acura", "Audi", "BMW", "Chevrolet", "Fiat", "Honda", "Mazda", "Mercedes-Benz", "Toyota", "Volvo"]
+    num_train_ims = 200
+    num_valid_ims = 10
+    brands = ["Audi", "BMW", "Chevrolet", "Fiat", "Honda", "Mazda", "Mercedes-Benz", "Toyota", "Volvo"]
 
     images_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../images')
     train_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data/train')
