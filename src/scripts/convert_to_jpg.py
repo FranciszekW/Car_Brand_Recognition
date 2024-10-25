@@ -37,6 +37,7 @@ def main():
         if os.path.isdir(brand_folder):
             print(f"Formatting images from {brand} folder...")
             convert_folder_to_jpg(brand_folder)
+            print(f"Formatted images from {brand} folder")
 
 
 if __name__ == "__main__":
