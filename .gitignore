@@ -1,5 +1,6 @@
 src/data
 src/raw_images
+src/scripts/download_images.py
 src/scripts/__pycache__
 src/private
 src/images
